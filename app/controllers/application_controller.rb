@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   def user_not_authorized(exception)
     policy_name = exception.policy.class.to_s.underscore
 
-    flash[:alert] = I18n.t "pundit.#{policy_name}.#{exception.query}", default: 'Please sign in to view the calendar page'
+    flash[:alert] = I18n.t "pundit.#{policy_name}.#{exception.query}", default: 'Please sign in to view the calander page'
     redirect_to(request.referrer || new_user_session_path)
   end
 
